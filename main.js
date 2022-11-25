@@ -1,4 +1,4 @@
-const url = "https://github.com/t118087/t118087.github.io/blob/main/dummydata.json"
+const url = "https://raw.githubusercontent.com/t118087/t118087.github.io/main/dummydata.json"
 
 jQuery(document).ready(function () {
   console.log("on load")
