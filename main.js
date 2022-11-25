@@ -6,7 +6,8 @@ jQuery(document).ready(function () {
     .then(res => {
       console.log("fetch returned")
       if (res.ok) {
-        res_json = res.json();
+        console.log(res)
+        res_json = res.body.json();
         data = res_json.data
         console.log(res_json)
         console.log(data)
