@@ -4,18 +4,20 @@ jQuery(document).ready(function () {
   console.log("on load")
   fetch(url, { method: "GET" })
     .then(res => {
-      console.log("fetch returned")
       if (res.ok) {
-        console.log(res)
-        res_json = res.body.json();
-        data = res_json.data
-        console.log(res_json)
-        console.log(data)
-        for (let i = 0; i < data.length; i++) {
-          let buffer = `<li>${data[i]}</li>`
-          console.log(buffer)
-          $(".data-store").append(buffer)
-        }
+        console.log(res.body)
+        res.json()
+        .then(rj => {
+          print(rj)
+          data = rj.data
+          console.log(data)
+          for (let i = 0; i < data.length; i++) {
+            let buffer = `<li>${data[i]}</li>`
+            console.log(buffer)
+            $(".data-store").append(buffer)
+          }
+        })
+        
       }
     })
 });
