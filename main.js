@@ -6,9 +6,12 @@ jQuery(document).ready(function () {
     .then(res => {
       console.log("fetch returned")
       if (res.ok) {
-        res.json();
-        for (let i = 0; i < res.data.length; i++) {
-          let buffer = `<li>${res.data[i]}</li>`
+        res_json = res.json();
+        data = res_json.data
+        console.log(res_json)
+        console.log(data)
+        for (let i = 0; i < data.length; i++) {
+          let buffer = `<li>${data[i]}</li>`
           console.log(buffer)
           $(".data-store").append(buffer)
         }
